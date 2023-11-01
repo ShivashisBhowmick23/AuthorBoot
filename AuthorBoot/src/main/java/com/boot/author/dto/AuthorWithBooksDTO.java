@@ -2,23 +2,23 @@ package com.boot.author.dto;
 
 import com.boot.author.model.Author;
 import com.boot.author.model.Book;
+import com.boot.author.model.BookPrice;
 import lombok.Data;
-import lombok.Getter;
 
 import java.util.List;
-import java.util.stream.Collectors;
+
 @Data
 public class AuthorWithBooksDTO {
 
-    private Long author_id;
+    private int author_id;
     private String name;
-    private List<String> bookTitles;
+    private List<Book> bookTitles;
+    private BookPrice book_details;
 
     public AuthorWithBooksDTO(Author author, List<Book> books) {
-        Long author_id = author.getAuthor_id();
-        String name = author.getName();
-        List<String> bookTitles = books.stream()
-                .map(Book::getTitle)
+         author_id = author.getAuthor_id();
+         name = author.getName();
+      bookTitles = books.stream()
                 .toList();
     }
 }

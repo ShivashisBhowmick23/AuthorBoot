@@ -2,6 +2,7 @@ package com.boot.author.service;
 
 import com.boot.author.dto.AuthorWithBooksDTO;
 import com.boot.author.model.Author;
+import com.boot.author.model.BookPrice;
 import com.boot.author.repository.AuthorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

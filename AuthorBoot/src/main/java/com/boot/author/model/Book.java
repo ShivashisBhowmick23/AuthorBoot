@@ -1,5 +1,6 @@
 package com.boot.author.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -9,8 +10,9 @@ public class Book {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private int id;
     private String title;
+    @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "author_id")
     private Author author;
